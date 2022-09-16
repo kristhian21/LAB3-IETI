@@ -1,11 +1,16 @@
 package com.restApi.entities;
 
 import com.restApi.dto.UserDto;
+import com.restApi.enums.RoleEnum;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Document
 public class User {
@@ -13,12 +18,27 @@ public class User {
     @Id
     private String id;
     private String name;
+    private String passwordHash;
+    private List<RoleEnum> roles;
     @Indexed( unique = true )
     private String email;
     private String lastName;
     private Date createdAt;
 
     public User() {
+    }
+
+    public User(UserDto userDto){
+        this.id = userDto.getId();
+        this.name = userDto.getName();
+        this.passwordHash = BCrypt.hashpw(userDto.getPassword(), BCrypt.gensalt());
+        this.email = userDto.getEmail();
+        this.lastName = userDto.getLastName();
+        try {
+            this.createdAt = new SimpleDateFormat("dd/MM/yyyy").parse(userDto.getCreatedAt());
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public User(String id, String name, String email, String lastName, Date createdAt) {
@@ -67,6 +87,22 @@ public class User {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public List<RoleEnum> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<RoleEnum> roles) {
+        this.roles = roles;
     }
 
     public UserDto toDto(){

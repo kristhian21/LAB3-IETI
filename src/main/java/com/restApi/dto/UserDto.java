@@ -10,6 +10,7 @@ public class UserDto {
 
     private String id;
     private String name;
+    private String password;
     private String email;
     private String lastName;
     private String createdAt;
@@ -60,6 +61,14 @@ public class UserDto {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public User toEntity(){

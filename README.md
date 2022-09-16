@@ -1,24 +1,15 @@
-# Spring Boot Data with MongoDB
+# Spring Boot Security with JWT
 
-## How to allow all IP addresses in a MongoDB database?
+### Learning Objectives
 
-<img src="img/allowAllIps.png">
+- Explain how JWT works.
+- Implement the security of the API endpoints using JWT
 
-## Tests
+Our API Endpoints can be used by anyone that knows the URL and API structure. In order to secure our API we are going to implement JWT authentication.
 
-### Create
-<img src="img/Post.png">
-<img src="img/Post2.png">
+### Main Topics
+- Spring Security.
+- JWT.
+- Token.
 
-### Get
-<img src="img/Get.png">
-
-### GetById
-<img src="img/GetByID.png">
-
-### Update
-<img src="img/Put.png">
-
-### Delete
-<img src="img/Delete.png">
-<img src="img/Delete2.png">
+### Codelab 🧪
