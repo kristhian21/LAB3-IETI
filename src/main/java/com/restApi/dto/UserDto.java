@@ -16,9 +16,10 @@ public class UserDto {
     private String lastName;
     private String createdAt;
 
-    public UserDto(String id, String name, String email, String lastName, String createdAt) {
+    public UserDto(String id, String name, String password, String email, String lastName, String createdAt) {
         this.id = id;
         this.name = name;
+        this.password = password;
         this.email = email;
         this.lastName = lastName;
         this.createdAt = createdAt;

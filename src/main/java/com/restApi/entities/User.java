@@ -106,7 +106,7 @@ public class User {
     }
 
     public UserDto toDto(){
-        return new UserDto(id, name, email, lastName, createdAt.toString());
+        return new UserDto(id, name, passwordHash, email, lastName, createdAt.toString());
     }
     public void toEntity(UserDto userDto) {
         this.name = userDto.getName();

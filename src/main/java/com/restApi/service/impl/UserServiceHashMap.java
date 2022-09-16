@@ -1,13 +1,14 @@
-package com.restApi.service;
+package com.restApi.service.impl;
 
 import com.restApi.entities.User;
+import com.restApi.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class UserServiceHashMap implements UserService{
+public class UserServiceHashMap implements UserService {
     private final HashMap<String, User> userHashMap = new HashMap<>();
 
     @Override
@@ -39,5 +40,10 @@ public class UserServiceHashMap implements UserService{
     public User update(User user, String userId) {
         userHashMap.replace(userId, user);
         return user;
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        return null;
     }
 }

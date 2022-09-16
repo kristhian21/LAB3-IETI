@@ -16,11 +16,16 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-	implementation 'javax.ws.rs:javax.ws.rs-api:2.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.modelmapper:modelmapper:3.1.0'
+	//For JWT
+	implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.security:spring-security-crypto'
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//Fix error
+	implementation 'javax.ws.rs:javax.ws.rs-api'
+	implementation 'javax.xml.bind:jaxb-api'
 }
 
 tasks.named('test') {

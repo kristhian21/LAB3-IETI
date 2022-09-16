@@ -1,15 +1,16 @@
-package com.restApi.service;
+package com.restApi.service.impl;
 
 import com.restApi.dto.UserDto;
 import com.restApi.entities.User;
 import com.restApi.repository.UserRepository;
+import com.restApi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserServiceMongoDB implements UserService{
+public class UserServiceMongoDB implements UserService {
 
     private final UserRepository userRepository;
 
@@ -49,4 +50,10 @@ public class UserServiceMongoDB implements UserService{
         }
         return null;
     }
+
+    @Override
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
 }
