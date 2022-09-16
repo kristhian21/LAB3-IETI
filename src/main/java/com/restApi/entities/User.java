@@ -108,4 +108,13 @@ public class User {
     public UserDto toDto(){
         return new UserDto(id, name, email, lastName, createdAt.toString());
     }
+    public void toEntity(UserDto userDto) {
+        this.name = userDto.getName();
+        this.lastName = userDto.getLastName();
+        this.email = userDto.getEmail();
+        System.out.println("Password: "+ userDto.getPassword());
+        if (userDto.getPassword() != null) {
+            this.passwordHash = BCrypt.hashpw(userDto.getPassword(), BCrypt.gensalt());
+        }
+    }
 }

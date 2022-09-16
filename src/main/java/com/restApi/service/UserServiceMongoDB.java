@@ -45,7 +45,8 @@ public class UserServiceMongoDB implements UserService{
         if (userRepository.existsById(id)){
             userRepository.deleteById(id);
             userRepository.insert(user);
+            return user;
         }
-        return user;
+        return null;
     }
 }

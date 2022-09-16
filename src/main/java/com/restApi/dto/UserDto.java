@@ -1,6 +1,7 @@
 package com.restApi.dto;
 
 import com.restApi.entities.User;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
