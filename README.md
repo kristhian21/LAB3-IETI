@@ -13,3 +13,16 @@ Our API Endpoints can be used by anyone that knows the URL and API structure. In
 - Token.
 
 ### Codelab 🧪
+
+#### Add a new user
+
+<img src="img/addNewUser.png">
+
+#### Open endpoint
+<img src="img/openEndPoint.png">
+
+#### Secure endPoint
+<img src="img/secureEndPoint.png">
+
+#### Receive a token 
+<img src="img/token.png">

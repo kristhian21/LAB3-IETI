@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,6 +35,8 @@ public class User {
         this.passwordHash = BCrypt.hashpw(userDto.getPassword(), BCrypt.gensalt());
         this.email = userDto.getEmail();
         this.lastName = userDto.getLastName();
+        this.roles = new ArrayList<>();
+        this.roles.add(RoleEnum.USER);
         try {
             this.createdAt = new SimpleDateFormat("dd/MM/yyyy").parse(userDto.getCreatedAt());
         } catch (ParseException e) {
