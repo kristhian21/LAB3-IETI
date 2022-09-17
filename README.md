@@ -24,5 +24,8 @@ Our API Endpoints can be used by anyone that knows the URL and API structure. In
 #### Secure endPoint
 <img src="img/secureEndPoint.png">
 
-#### Receive a token 
+#### Generate the token 
 <img src="img/token.png">
+
+#### Access to the user endpoint with the token 
+<img src="img/final.png">
